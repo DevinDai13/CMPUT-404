@@ -26,9 +26,7 @@ def main():
                         if not data:
                            break
                         full_data += data
-                    #sending to google
                     proxy_end.sendall(full_data)
-                    #grab data from google
                     full_data_from_google = b""
                     while True:
                         data = proxy_end.recv(BUFFER_SIZE)

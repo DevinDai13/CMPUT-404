@@ -13,8 +13,8 @@ def connect_socket(addr):
         s = socket.socket(family, socketype, proto) #get TCP connection
         s.connect(sockaddr)
         s.sendall(payload.encode()) #request the page
-        full_data = b"" #(send using byte. cant use string)
-        while True: # infincte loop for keeps receiving data, once all the data has been received, you get an empty string, loop breaks
+        full_data = b"" #(send using byte. can't use string)
+        while True: # infinite loop for receiving data, once all the data has been received, you get an empty string, loop breaks
             data = s.recv(BUFFER_SIZE)
             if not data:
                break

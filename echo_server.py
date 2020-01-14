@@ -1,7 +1,7 @@
 import socket, time
 
 HOST = ""
-PORT = 8081
+PORT = 8001
 BUFFER_SIZE = 1024
 
 def main():
@@ -12,9 +12,10 @@ def main():
 
         while True:
             conn, addr = s.accept()
+            print(addr)
             with conn:
                 print(conn)#print out the connection 
-                print(addr)#print the conencted IP address
+                print(addr)#print the connected IP address
                 full_data = b""
                 while True:
                     data = conn.recv(BUFFER_SIZE)#what we receive from the client
